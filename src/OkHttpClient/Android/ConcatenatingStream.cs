@@ -5,7 +5,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ModernHttpClient
+namespace OkHttpClient
 {
     // This is a hacked up version of http://stackoverflow.com/a/3879246/5728
     class ConcatenatingStream : Stream

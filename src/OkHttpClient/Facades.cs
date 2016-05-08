@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Threading.Tasks;
-using System.Threading;
 using System.IO;
 using System.Net;
 
-namespace ModernHttpClient
+namespace OkHttpClient
 {
-    public class NativeMessageHandler : HttpClientHandler
+    public class OkHttpMessageHandler : HttpClientHandler
     {
         const string wrongVersion = "You're referencing the Portable version in your App - you need to reference the platform (iOS/Android) version";
 
@@ -16,15 +14,15 @@ namespace ModernHttpClient
 
         /// <summary>
         /// Initializes a new instance of the <see
-        /// cref="ModernHttpClient.Portable.NativeMessageHandler"/> class.
+        /// cref="OkHttpClient.Portable.NativeMessageHandler"/> class.
         /// </summary>
-        public NativeMessageHandler(): base()
+        public OkHttpMessageHandler(): base()
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see
-        /// cref="ModernHttpClient.Portable.NativeMessageHandler"/> class.
+        /// cref="OkHttpClient.Portable.NativeMessageHandler"/> class.
         /// </summary>
         /// <param name="throwOnCaptiveNetwork">If set to <c>true</c> throw on
         /// captive network (ie: a captive network is usually a wifi network
@@ -36,7 +34,7 @@ namespace ModernHttpClient
         /// will take place)</param>
         /// <param name="cookieHandler">Enable native cookie handling.
         /// </param>
-        public NativeMessageHandler(bool throwOnCaptiveNetwork, bool customSSLVerification, NativeCookieHandler cookieHandler = null) : base()
+        public OkHttpMessageHandler(bool throwOnCaptiveNetwork, bool customSSLVerification, NativeCookieHandler cookieHandler = null) : base()
         {
         }
 

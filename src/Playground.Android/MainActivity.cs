@@ -1,15 +1,11 @@
 using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Net.Http;
-using ModernHttpClient;
+using OkHttpClient;
 using System.Threading;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Text;
 using System.Net;
@@ -21,8 +17,6 @@ namespace Playground.Android
     [Activity (Label = "Playground.Android", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        int count = 1;
-
         CancellationTokenSource currentToken;
 
         ProgressBar progress;
@@ -85,13 +79,13 @@ namespace Playground.Android
             };
 
             button.Click += async (o, e) => {
-                var handler = new NativeMessageHandler();
+                var handler = new OkHttpClientHandler();
                 var client = new HttpClient(handler);
 
                 currentToken = new CancellationTokenSource();
                 var st = new Stopwatch();
 
-                client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("ModernHttpClient", "1.0"));
+                client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("OkHttpClient", "1.0"));
                 client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("MyTest", "2.0"));
                 handler.DisableCaching = true;
 
@@ -99,7 +93,7 @@ namespace Playground.Android
                 try {
                     //var url = "https://tv.eurosport.com";
                     //var url = "https://github.com/downloads/nadlabak/android/cm-9.1.0a-umts_sholes.zip";
-                    var url = "https://github.com/paulcbetts/ModernHttpClient/releases/download/0.9.0/ModernHttpClient-0.9.zip";
+                    var url = "https://github.com/paulcbetts/OkHttpClient/releases/download/0.9.0/OkHttpClient-0.9.zip";
 
                     var request = new HttpRequestMessage(HttpMethod.Get, url);
                     handler.RegisterForProgress(request, HandleDownloadProgress);

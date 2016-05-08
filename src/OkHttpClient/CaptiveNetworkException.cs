@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace ModernHttpClient
+namespace OkHttpClient
 {
     /// <summary>
     /// Thrown when the request goes to a captive network. This happens

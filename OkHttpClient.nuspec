@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>2.4.2</version>
-    <authors>Paul Betts</authors>
-    <owners>Paul Betts</owners>
+    <version>3.2.0.0</version>
+    <authors>Tom Gilder</authors>
+    <owners>Tom Gilder</owners>
     <licenseUrl>https://github.com/paulcbetts/ModernHttpClient/blob/master/COPYING</licenseUrl>
     <projectUrl>https://github.com/paulcbetts/ModernHttpClient</projectUrl>
-    <id>modernhttpclient</id>
-    <title>ModernHttpClient</title>
+    <id>okhttpclient</id>
+    <title>OkHttpClient</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Write your app using System.Net.Http, but drop this library in and it will go drastically faster.</description>
     <summary>Write your app using System.Net.Http, but drop this library in and it will go drastically faster.</summary>
-    <copyright>Copyright Paul Betts © 2012</copyright>
+    <copyright>Copyright Tom Gilder © 2016</copyright>
     <dependencies>
       <group targetFramework="MonoAndroid">
         <dependency id="Square.OkHttp" version="2.4.0.3" />

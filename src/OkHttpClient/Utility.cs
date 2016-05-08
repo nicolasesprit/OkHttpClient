@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace ModernHttpClient
+namespace OkHttpClient
 {
     internal static class Utility
     {

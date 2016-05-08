@@ -10,15 +10,12 @@ using Javax.Net.Ssl;
 using System.Text.RegularExpressions;
 using Java.IO;
 using System.Security.Cryptography.X509Certificates;
-using System.Globalization;
-using Android.OS;
-using Android.Telecom;
 
-namespace ModernHttpClient
+namespace OkHttpClient
 {
-    public class NativeMessageHandler : HttpClientHandler
+    public class OkHttpClientHandler : HttpClientHandler
     {
-        readonly OkHttpClient client = new OkHttpClient();
+        readonly Square.OkHttp3.OkHttpClient client = new Square.OkHttp3.OkHttpClient();
         readonly CacheControl noCacheCacheControl = default(CacheControl);
         readonly bool throwOnCaptiveNetwork;
 
@@ -31,12 +28,13 @@ namespace ModernHttpClient
 
         public bool DisableCaching { get; set; }
 
-        public NativeMessageHandler() : this(false, false) {}
+        public OkHttpClientHandler() : this(false, false) {}
 
-        public NativeMessageHandler(bool throwOnCaptiveNetwork, bool customSSLVerification, NativeCookieHandler cookieHandler = null)
+        public OkHttpClientHandler(bool throwOnCaptiveNetwork, bool customSSLVerification, NativeCookieHandler cookieHandler = null)
         {
             this.throwOnCaptiveNetwork = throwOnCaptiveNetwork;
 
+            // TODO: Fix
             //if (customSSLVerification) client.SetHostnameVerifier(new HostnameVerifier());
             noCacheCacheControl = (new CacheControl.Builder()).NoCache().Build();
         }
@@ -133,7 +131,7 @@ namespace ModernHttpClient
 			{
                 if (ex.Message != null && ex.Message.ToLowerInvariant().Contains("canceled"))
 				{
-                    throw new System.OperationCanceledException();
+                    throw new OperationCanceledException();
                 }
 
                 throw;
@@ -181,6 +179,7 @@ namespace ModernHttpClient
 
 			public void OnFailure(ICall p0, Java.IO.IOException p1)
             {
+                // TODO: Fix
                 // Kind of a hack, but the simplest way to find out that server cert. validation failed
                 //if (p1.Message == String.Format("Hostname '{0}' was not verified", p0.Url().Uri().Host)) {
                     //tcs.TrySetException(new WebException(p1.LocalizedMessage, WebExceptionStatus.TrustFailure));
