@@ -26,7 +26,7 @@ namespace Playground.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::ModernHttpClient.Resource.String.library_name = global::Playground.Android.Resource.String.library_name;
+			global::OkHttpClient.Resource.String.library_name = global::Playground.Android.Resource.String.library_name;
 		}
 		
 		public partial class Attribute

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkHttpClient.Android", "src\OkHttpClient\OkHttpClient.Android.csproj", "{F7290B9E-C821-4DA7-A4E5-824D9B0F70F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkHttpClient", "src\OkHttpClient\OkHttpClient.csproj", "{F7290B9E-C821-4DA7-A4E5-824D9B0F70F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Android", "src\Playground.Android\Playground.Android.csproj", "{90F8D67C-8D81-4DCE-BAE7-1ABA136A4C60}"
 EndProject

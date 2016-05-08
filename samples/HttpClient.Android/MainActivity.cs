@@ -6,7 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using ModernHttpClient;
+using OkHttpClient;
 
 namespace HttpClient.Android
 {

@@ -76,9 +76,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\OkHttpClient\OkHttpClient.Android.csproj">
+    <ProjectReference Include="..\OkHttpClient\OkHttpClient.csproj">
       <Project>{F7290B9E-C821-4DA7-A4E5-824D9B0F70F2}</Project>
-      <Name>OkHttpClient.Android</Name>
+      <Name>OkHttpClient</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
