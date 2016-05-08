@@ -74,11 +74,11 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\OkHttpClient\OkHttpClient.csproj">
-      <Project>{F7290B9E-C821-4DA7-A4E5-824D9B0F70F2}</Project>
+      <Project>{6627EB12-3F14-4190-8BEF-71CB90714261}</Project>
       <Name>OkHttpClient</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
