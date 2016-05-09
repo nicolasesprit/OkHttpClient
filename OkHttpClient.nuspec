@@ -9,9 +9,9 @@
     <id>OkHttpClient</id>
     <title>OkHttpClient</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Write your app using System.Net.Http, but drop this library in and it will go drastically faster.</description>
-    <summary>Write your app using System.Net.Http, but drop this library in and it will go drastically faster.</summary>
-    <copyright>Copyright Tom Gilder © 2016</copyright>
+    <description>HttpClientHandler implementation for Android using OkHttp</description>
+    <summary>HttpClientHandler implementation for Android using OkHttp</summary>
+    <copyright></copyright>
     <dependencies>
       <group targetFramework="MonoAndroid">
         <dependency id="Square.OkHttp3" version="3.2.0.0" />
