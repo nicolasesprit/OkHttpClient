@@ -20,6 +20,6 @@
   </metadata>
 
   <files>
-    <file src="build/**/*.*" target="lib" />
+    <file src="build/Release/*.*" target="lib" />
   </files>
 </package>
