@@ -35,6 +35,9 @@ Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
     {
+        var guid = Guid.NewGuid();
+        Information($"##vso[task.logdetail id={guid};name=OkHttpClient;type=build;order=1]Build");
+
         if(IsRunningOnWindows())
         {
             // Use MSBuild
