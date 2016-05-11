@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>3.2.0.0</version>
+    <version>2.7.5.0</version>
     <authors>Tom Gilder</authors>
     <owners>Tom Gilder</owners>
     <licenseUrl>https://github.com/tomgilder/OkHttpClient/blob/master/COPYING</licenseUrl>
@@ -9,12 +9,12 @@
     <id>OkHttpClient</id>
     <title>OkHttpClient</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>HttpClientHandler implementation for Android using OkHttp</description>
-    <summary>HttpClientHandler implementation for Android using OkHttp</summary>
+    <description>HttpClientHandler implementation for Android using OkHttp v2</description>
+    <summary>HttpClientHandler implementation for Android using OkHttp v2</summary>
     <copyright></copyright>
     <dependencies>
       <group targetFramework="MonoAndroid">
-        <dependency id="Square.OkHttp3" version="3.2.0.0" />
+        <dependency id="Square.OkHttp" version="2.7.5.0" />
       </group>
     </dependencies>
   </metadata>
