@@ -52,12 +52,11 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConcatenatingStream.cs" />
     <Compile Include="NativeCookieHandler.cs" />
     <Compile Include="OkHttpClientHandler.cs" />
     <Compile Include="CaptiveNetworkException.cs" />
     <Compile Include="ProgressStreamContent.cs" />
-    <Compile Include="Utility.cs" />
+    <Compile Include="AwaitableOkHttp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

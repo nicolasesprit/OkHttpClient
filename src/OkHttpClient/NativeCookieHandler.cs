@@ -7,27 +7,26 @@ namespace OkHttpClient
 {
     public class NativeCookieHandler
     {
-        readonly CookieManager cookieManager = new CookieManager();
+        readonly CookieManager _cookieManager = new CookieManager();
 
         public NativeCookieHandler()
         {
-            CookieHandler.Default = cookieManager; //set cookie manager if using NativeCookieHandler
+            CookieHandler.Default = _cookieManager; //set cookie manager if using NativeCookieHandler
         }
 
         public void SetCookies(IEnumerable<Cookie> cookies)
         {
-            foreach (var nc in cookies.Select(ToNativeCookie)) {
-                cookieManager.CookieStore.Add(new URI(nc.Domain), nc);
+            foreach (var nc in cookies.Select(ToNativeCookie))
+            {
+                _cookieManager.CookieStore.Add(new URI(nc.Domain), nc);
             }
         }
-            
-        public List<Cookie> Cookies {
-            get {
-                return cookieManager.CookieStore.Cookies
-                    .Select(ToNetCookie)
-                    .ToList();
-            }
-        }
+
+        public List<Cookie> Cookies => _cookieManager.CookieStore
+                                                     .Cookies
+                                                     .Select(ToNetCookie)
+                                                     .ToList();
+
 
         static HttpCookie ToNativeCookie(Cookie cookie)
         {

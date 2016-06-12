@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace OkHttpClient
 {
-    public delegate void ProgressDelegate (long bytes, long totalBytes, long totalBytesExpected);
+    public delegate void ProgressDelegate(long bytes, long totalBytes, long totalBytesExpected);
 
     public class ProgressStreamContent : StreamContent
     {
@@ -24,23 +24,23 @@ namespace OkHttpClient
         ProgressStreamContent(ProgressStream stream)
             : base(stream)
         {
-            init(stream);
+            Init(stream);
         }
 
         ProgressStreamContent(ProgressStream stream, int bufferSize)
             : base(stream, bufferSize)
         {
-            init(stream);
+            Init(stream);
         }
 
-        void init(ProgressStream stream)
+        void Init(ProgressStream stream)
         {
-            stream.ReadCallback = readBytes;
+            stream.ReadCallback = ReadBytes;
 
             Progress = delegate { };
         }
 
-        void reset()
+        void Reset()
         {
             _totalBytes = 0L;
         }
@@ -48,13 +48,13 @@ namespace OkHttpClient
         long _totalBytes;
         long _totalBytesExpected = -1;
 
-        void readBytes(long bytes) 
+        void ReadBytes(long bytes)
         {
-            if (_totalBytesExpected == -1) 
+            if (_totalBytesExpected == -1)
                 _totalBytesExpected = Headers.ContentLength ?? -1;
 
             long computedLength;
-            if (_totalBytesExpected == -1 && TryComputeLength(out computedLength)) 
+            if (_totalBytesExpected == -1 && TryComputeLength(out computedLength))
                 _totalBytesExpected = computedLength == 0 ? -1 : computedLength;
 
             // If less than zero still then change to -1
@@ -68,7 +68,8 @@ namespace OkHttpClient
         public ProgressDelegate Progress
         {
             get { return _progress; }
-            set { 
+            set
+            {
                 if (value == null) _progress = delegate { };
                 else _progress = value;
             }
@@ -76,7 +77,7 @@ namespace OkHttpClient
 
         protected override Task SerializeToStreamAsync(Stream stream, TransportContext context)
         {
-            reset();
+            Reset();
             return base.SerializeToStreamAsync(stream, context);
         }
 
@@ -106,15 +107,15 @@ namespace OkHttpClient
 
             public Stream ParentStream { get; private set; }
 
-            public override bool CanRead { get { return ParentStream.CanRead; } }
+            public override bool CanRead => ParentStream.CanRead;
 
-            public override bool CanSeek { get { return ParentStream.CanSeek; } }
+            public override bool CanSeek => ParentStream.CanSeek;
 
-            public override bool CanWrite { get { return ParentStream.CanWrite; } }
+            public override bool CanWrite => ParentStream.CanWrite;
 
-            public override bool CanTimeout { get { return ParentStream.CanTimeout; } }
+            public override bool CanTimeout => ParentStream.CanTimeout;
 
-            public override long Length { get { return ParentStream.Length; } }
+            public override long Length => ParentStream.Length;
 
             public override void Flush()
             {
@@ -126,7 +127,8 @@ namespace OkHttpClient
                 return ParentStream.FlushAsync(cancellationToken);
             }
 
-            public override long Position {
+            public override long Position
+            {
                 get { return ParentStream.Position; }
                 set { ParentStream.Position = value; }
             }
@@ -183,7 +185,8 @@ namespace OkHttpClient
 
             protected override void Dispose(bool disposing)
             {
-                if (disposing) {
+                if (disposing)
+                {
                     ParentStream.Dispose();
                 }
             }
