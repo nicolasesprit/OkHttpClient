@@ -1,7 +1,7 @@
 OkHttpClient
 ============
 
-Fork of [ModernHttpClient](https://github.com/paulcbetts/ModernHttpClient) without the iOS client, and upgraded OkHttp to v3.
+Fork of [ModernHttpClient](https://github.com/paulcbetts/ModernHttpClient) without the iOS client. This branch is for OkHttp v2
 
 ## Usage
 
