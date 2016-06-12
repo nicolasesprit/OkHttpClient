@@ -60,7 +60,6 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
